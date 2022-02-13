@@ -9,9 +9,9 @@ Radix sort uses counting sort as a subroutine to sort an array of numbers.
 package main
 
 import (
-    "fmt"
-    "bytes"
-    "encoding/binary"
+	"bytes"
+	"encoding/binary"
+	"fmt"
 )
 
 const digit = 4
@@ -28,6 +28,7 @@ func radixSort(data []int32) {
         buf.Read(b)
         ds[i] = b
     }
+
     countingSort := make([][][]byte, 256)
     for i := 0; i < digit; i++ {
         for _, b := range ds {
@@ -40,11 +41,13 @@ func radixSort(data []int32) {
             countingSort[k] = bs[:0]
         }
     }
+
     var w int32
+
     for i, b := range ds {
         buf.Write(b)
         binary.Read(buf, binary.LittleEndian, &w)
-        data[i] = w^maxbit
+        data[i] = w ^ maxbit
     }
 }
 

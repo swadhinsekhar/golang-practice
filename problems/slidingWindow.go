@@ -25,12 +25,15 @@ func maxSubarraySum(array [] int, n int) int {
     tempSum = maxSum
 
     for i := n; i < len(array); i++ {
-        //assigning new tempsum,
-        //we get the current tempSum,
-        //move down the number of indexes == to n,
-        //subtract that number, then add the number of
-        //the current loops index
+        /*
+			assigning new tempsum,
+			we get the current tempSum,
+			move down the number of indexes == to n,
+			subtract that number, then add the number of
+			the current loops index
+		*/
         //fmt.Println(tempSum, array[i-n], array[i])
+
         tempSum = tempSum - array[i-n] + array[i]
         maxSum = Max(maxSum, tempSum)
     }

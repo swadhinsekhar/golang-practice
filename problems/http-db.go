@@ -29,13 +29,15 @@ func (s *server) apiHandler(w http.ResponseWriter, r *http.Request) {
 
 }
 
-// - The object from the request body from API handler
-// should be passed to the run goroutine
-// - The run goroutine is a long lived background process
-// - The run goroutine calls Write when it has to save the
-// data to the DB
-// - The Write call should be done only when there are more
-// 100 objects in the buffer or more than 10 seconds has passed
+/*
+ * - The object from the request body from API handler
+ * should be passed to the run goroutine
+ * - The run goroutine is a long lived background process
+ * - The run goroutine calls Write when it has to save the
+ * data to the DB
+ * - The Write call should be done only when there are more
+ * 100 objects in the buffer or more than 10 seconds has passed
+ **/
 func (db *DB) Run(runChan chan *DeviceDetails) {
 
     insertBuf := make([] DeviceDetails, 100)
