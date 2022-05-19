@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Websocket Example</title>
+</head>
+<body>
+    <h1>Websocket Example</h1>
+    <script>
+        let socket = new WebSocket("ws://192.168.11.108:8090/cpecli")
+        console.log("Attempting Websocket Connection")
+
+        socket.onopen = () => {
+                    console.log("Successfully Connected")
+                    socket.send("Hi, From the client")
+                }
+        socket.onmessage = (event) => {
+                    console.log("socket message: ", event)
+                }
+        socket.onclose = (event) => {
+                    console.log("Socket Closed Connection: ", event)
+                }
+        socket.onerror = (event) => {
+                    console.log("Socket On Error: ", event)
+                }
+    </script>
+	
+</body>
+</html>
