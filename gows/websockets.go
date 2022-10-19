@@ -53,5 +53,5 @@ func main() {
 	log.Println("go websocket example")
 	setupRoutes()
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Fatal(http.ListenAndServe(":8088", nil))
 }
