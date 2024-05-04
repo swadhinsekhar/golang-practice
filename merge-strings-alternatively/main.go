@@ -4,7 +4,7 @@ import "fmt"
 
 //[1768. Merge Strings Alternately](https://leetcode.com/problems/merge-strings-alternately/)
 
-func mergeAlneternately(word1 string, word2 string) string {
+func MergeAlneternately(word1 string, word2 string) string {
 	if len(word1) < 1 {
 		return word1 + word2
 	}
@@ -18,6 +18,7 @@ func mergeAlneternately(word1 string, word2 string) string {
 		i++
 		j++
 	}
+
 	for i < len(word1) {
 		result += string(word1[i])
 		i++
@@ -36,10 +37,10 @@ func main() {
 	word1 := "abc"
 	word2 := "pqr"
 	// Output: "apbqcr"
-	fmt.Println(mergeAlneternately(word1, word2))
+	fmt.Println(MergeAlneternately(word1, word2))
 
 	word1 = "ab"
 	word2 = "pqrs"
-	fmt.Println(mergeAlneternately(word1, word2))
+	fmt.Println(MergeAlneternately(word1, word2))
 	// Output: "apbqrs"
 }

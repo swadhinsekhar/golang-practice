@@ -1,0 +1,33 @@
+{
+  "applications": {
+    "http": [
+      {
+        "enable": true,
+        "name": "device-gui",
+        "urls": "http://192.168.11.1:80"
+      },
+      {
+        "enable": true,
+        "name": "console",
+        "urls": "http://127.0.0.1:12001"
+      }
+    ],
+    "https": [],
+    "ssh": {
+      "enable": true,
+      "name": "ssh-console",
+      "protocol": "ssh"
+    }
+  },
+  "env": "local",
+  "name": "webpath",
+  "node": {
+    "device_name": "kklloa",
+    "node_id": "123456789",
+    "tunnel_id": "1001"
+  },
+  "webpathserver": {
+    "address": "127.0.0.1",
+    "port": 80
+  }
+}
