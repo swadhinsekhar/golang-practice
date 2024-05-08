@@ -82,7 +82,7 @@ func reverseList(head *ListNode) *ListNode {
 		next := current.Next
 		current.Next = prev // prev = nil, current = 1 -> 2 -> nil
 		prev = current      // prev = 1
-		fmt.Println("prev", prev.Val, "prev.Next", prev.Next)
+		//fmt.Println("prev", prev.Val, "prev.Next", prev.Next)
 		current = next
 	}
 	return prev
