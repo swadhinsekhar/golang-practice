@@ -13,6 +13,15 @@ func gcd(a, b int) int {
 	return a
 }
 
+// Time Complexity: O(n+m)
+// 	because the concatenation of the strings is O(n+m)
+// 	and the slice operation is O(1)
+// 	and the gcd function is O(log(min(n, m)))
+// 	so the overall time complexity is O(n+m)
+//
+// Space Complexity: O(1)
+//  because we are not using any extra space
+
 func gcdOfStrings(str1 string, str2 string) string {
 	if str1+str2 != str2+str1 {
 		return ""

@@ -22,4 +22,3 @@ func main() {
 func abc(rw http.ResponseWriter, rq *http.Request) {
 	rw.Write([]byte("great!"))
 }
-
