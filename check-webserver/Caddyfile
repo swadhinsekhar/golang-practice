@@ -1,0 +1,16 @@
+{
+	# Global options block. Optional, but useful for setting global defaults.
+	# Change the email to your email address to obtain TLS certificates from Let's Encrypt.
+	email you@example.com
+}
+
+# Define the site to be served
+cloud.domain.com {
+	# Reverse proxy to the Go application
+	reverse_proxy check-server:8080
+}
+
+# Redirect HTTP to HTTPS
+http://cloud.domain.com {
+    redir https://cloud.domain.com
+}
